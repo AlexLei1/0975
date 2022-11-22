@@ -11,12 +11,11 @@ if ($url[1] == "blog") {
   $content = file_get_contents("pages/register.html");
 } else if ($url[1] == "articles") {
   $content = file_get_contents("pages/single-blog.html");
+} else if ($url[1] == "users") {
+  require_once("pages/users/index.html");
 } else {
   $content = file_get_contents("pages/index.php");
 }
 
-
-
-
-
-require_once("template.php");
+if (!empty($content))
+  require_once("template.php");
